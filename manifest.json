@@ -1,0 +1,32 @@
+{
+  "manifest_version": 3,
+  "name": "AdBlock",
+  "description": "AdBlock upgraded",
+  "version": "2.0",
+  "action": {
+    "default_popup": "hello.html",
+    "default_icon": "hello_extensions.png"
+  },
+  "declarative_net_request" : {
+    "rule_resources" : [{
+      "id": "ruleset_1",
+      "enabled": true,
+      "path": "rules.json"
+    }]
+  },
+  "permissions": [
+    "declarativeNetRequest",
+    "declarativeNetRequestFeedback"
+  ],
+  "host_permissions": [
+    "https://*/*",
+    "http://*/*"
+  ],
+  "content_scripts" : [
+    {
+      "matches" : ["https://*/*","http://*/*"],
+      "js" : ["block.js"]
+    }
+  ]
+}
+  
