@@ -25,7 +25,7 @@
   "content_scripts" : [
     {
       "matches" : ["https://*/*","http://*/*"],
-      "js" : ["block.js"]
+      "js" : ["hide_ads.js"]
     }
   ]
 }

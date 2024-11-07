@@ -1,17 +1,20 @@
 // if class == "gpt-ad"
 // "ad-slot-placeholder top-leaderboard"
 
+
 function block_ads() {
-    classes = ["gpt-ad","top-ads-container"]
-    for (const className of classes) {
-        const ads = document.getElementsByClassName(className);
-        for (const ad of ads) {
-            ad.remove()
+    if (enabled === true) {
+        classes = ["gpt-ad","top-ads-container"]
+        for (const className of classes) {
+            const ads = document.getElementsByClassName(className);
+            for (const ad of ads) {
+                ad.remove()
+            }
         }
+        ads = document.getElementsByClassName("gpt-ad");
+        for (const ad of ads)
+            ad.remove();
     }
-    ads = document.getElementsByClassName("gpt-ad");
-    for (const ad of ads)
-        ad.remove();
 }
 
 const observer = new MutationObserver(block_ads);
