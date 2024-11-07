@@ -16,7 +16,7 @@ function block_ads() {
 
 const observer = new MutationObserver(block_ads);
 const config = { attributes: true, childList: true, subtree: true };
-const targetNode = document.body
+const targetNode = document.getElementsByClassName("channel-root__right-column channel-root__right-column--expanded").item(0);
 
 observer.observe(targetNode, config);
 
