@@ -1,15 +1,17 @@
 let enabled = true;
 
 const enableButton = document.getElementById("enableButton");
-generatorButton.addEventListener("click", enableAds);
+enableButton.addEventListener("click", enableAds);
 
-const generatorButton = document.getElementById("disableButton");
-generatorButton.addEventListener("click", disableAds);
+const disableButton = document.getElementById("disableButton");
+disableButton.addEventListener("click", disableAds);
 
 function enableAds() {
-    browser.declarativeNetRequest.updateEnabledRulesets({ enableRulesetIds : ["blocking_ruleset"], disableRulesetsIds : []});    
+    console.log("enabling");
+    chrome.declarativeNetRequest.updateEnabledRulesets({ enableRulesetIds : ["blocking_ruleset"], disableRulesetIds : []});    
 }
 
 function disableAds() {
-    browser.declarativeNetRequest.updateDEnabledRulesets({ enableRulesetIds : [], disableRulesetsIds : ["blocking_ruleset"]});    
+    console.log("disabling");
+    chrome.declarativeNetRequest.updateEnabledRulesets({ enableRulesetIds : [], disableRulesetIds : ["blocking_ruleset"]});    
 }
